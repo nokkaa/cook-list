@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
-    
+    //↓食べた物、ジャンル、日付）（宣言コーナー）
     var dishname : String = ""
     var genre : String = ""
     var date : Date?
@@ -17,12 +17,36 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var pickerview: UIPickerView!
-     
+    @IBOutlet weak var datePicker: UIDatePicker! = UIDatePicker()
     
+    //画面表示されて最初に行うこと
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        datePicker.locale =  Locale(identifier: "ja_JP")
+        
+        // pickerView
+        pickerview.delegate = self
+        pickerview.dataSource = self
+      
+    }
+     
+    //ここで記入したごはんをほぞん
     @IBAction func saveWord() {
         dishname = textfield.text ?? ""
         let index = pickerview.selectedRow(inComponent: 0)
         genre = genrearray[index]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ja_JP")
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .medium
+        dateFormatter.dateFormat = "yyyy年M月d日 H時mm分"
+        let dateAndTime = "\(dateFormatter.string(from: datePicker.date))"
+    
+        
+        print(dateAndTime)
+        
         print(dishname)
         print(genre)
         let dic: Dictionary<String, String> = ["dishname": dishname, "genre": genre]
@@ -46,14 +70,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.present(alert, animated: true, completion: nil)
         
     }
-  
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        pickerview.delegate = self
-        pickerview.dataSource = self
-        textfield.delegate = self
-    }
+    
+//    @IBAction func changed(sender: UIDatePicker) {
+//        let date2:
+//    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//オススメを表示する
 class AdviceViewController: UIViewController {
     @IBOutlet var label: UILabel!
     @IBOutlet var button: UIButton!
@@ -17,6 +17,7 @@ class AdviceViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    //ランダムでオススメ
     @IBAction func Tappedbutton() {
         let randomValue = foodname.randomElement()!
         label.text = randomValue

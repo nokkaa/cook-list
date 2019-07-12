@@ -47,10 +47,6 @@
                                 <rect key="frame" x="0.0" y="282" width="414" height="168"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H6D-nQ-tcy">
-                                <rect key="frame" x="0.0" y="521" width="414" height="152"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="種類" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfr-hX-Neu">
                                 <rect key="frame" x="33" y="229" width="69" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -74,12 +70,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lcN-IX-DlH">
+                                <rect key="frame" x="0.0" y="482" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="584618637.78665102">
+                                    <!--2019-07-12 10:03:57 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.76816353961328443" blue="0.78133670217990603" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="rKD-Lv-5Ta"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="登録する" image="pizza.png" selectedImage="pizza.png" id="cqC-l3-p1z"/>
                     <connections>
+                        <outlet property="datePicker" destination="lcN-IX-DlH" id="ddb-Gv-YHi"/>
                         <outlet property="pickerview" destination="vhv-Ot-Kk4" id="GSt-fJ-alf"/>
                         <outlet property="textfield" destination="0ki-q7-1e8" id="Q79-As-32a"/>
                     </connections>
