@@ -46,10 +46,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
         
         print(dateAndTime)
-        
         print(dishname)
         print(genre)
-        let dic: Dictionary<String, String> = ["dishname": dishname, "genre": genre]
+        
+        let dic: Dictionary<String, String> = ["dishname": dishname, "genre": genre, "dateAndTime": dateAndTime]
         var disharray: [Dictionary<String, String>] = []
         let ud = UserDefaults.standard
         if ud.array(forKey: "disharray") != nil{

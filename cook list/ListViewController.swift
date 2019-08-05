@@ -46,6 +46,8 @@ class ListViewController: UITableViewController {
         let dish = disharray[indexPath.row]
         let dishname = dish["dishname"]
         let genre = dish["genre"]
+        let dateAndTime = dish["dateAndTime"]
+        
         cell.textLabel?.text = dishname
         cell.detailTextLabel?.text = genre
         return cell
